@@ -1,0 +1,86 @@
+Body {
+}
+ul {
+margin : 4px;
+}
+ul li {
+/*fyll på med kod*/
+cursor: pointer;
+-webkit-user-select: n  one;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+ul li:nth-child(odd) {
+    color: green;
+}
+ul li:hover {
+    color: darkgreen;
+    
+   
+    }
+    ul li.checked {
+    background-color: blue;
+    color: lightblue;
+    text-decoration: line-through;
+    }
+    /* Addar en Checked märke när man clickar på*/
+    ul li.checked::before {
+    content: '';
+    position: absolute;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    top: 10px;
+    left: 16px;
+    transform: rotate(45deg);
+    height: 15px;
+    width: 7px;
+    }
+    
+    
+    /* definera en stil till close button */
+    .close {
+    position: 23px;
+    right: 0;
+    top: 0;
+    padding: 5px;
+    }
+    .close:hover {
+    background-color: midnightblue;
+    color: red;
+    }
+    .header {
+    background-image: url('images/my-image.jpg');
+    padding: 4px;
+    text-align:center 4px solid;
+    }
+    .header:after {
+    content: "";
+    display: table;
+    clear: both;
+    }
+    /*Ge din egen still till input*/
+    input {
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    }
+    
+    
+    /* Ge style till Add knappen */
+    .addBtn {
+    padding: 10px;
+    background-color:red;
+    color: #555;
+    float: left;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 0;
+    }
+    
+    .addBtn:hover {
+    background-color: blue;
+    }

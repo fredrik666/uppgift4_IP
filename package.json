@@ -1,0 +1,17 @@
+{
+  "name": "package",
+  "version": "1.0.0",
+  "description": "\"Hello World\",",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "\"Fredrik Rinne\"",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^15.3.0"
+  }
+
+  
+}
+

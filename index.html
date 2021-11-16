@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="main.css">
+<title>TODO List</title>
+</head>
+<body>
+<div id="mainDIV" class="header">
+<h2 style="margin:5px"> Uppgift 4 Todolist </h2>
+<input type="text" id="mainInput" placeholder="Title...">
+<span onclick="newElement()" class="addBtn">Add Topic</span>
+
+</div>
+<ul id="mainUl">
+<li>Gå till Gymmet</li>
+<li class="checked">Betala Räkningar</li>
+<li>Möte med chefen</li>
+<li>Butiks lista</li>
+</ul>
+<script>
+    // Create a "close" button and append it to each list item
+var nodelist = document.getElementsByTagName("LI");
+var i;
+for (i = 0; i < nodelist.length; i++) {
+var span = document.createElement("SPAN");
+var txt = document.createTextNode("\u00D7");
+span.className = "close";
+span.appendChild(txt);
+nodelist[i].appendChild(span);
+}
+// Click on a close button to hide the current list item
+var close = document.getElementsByClassName("close");
+var i;
+for (i = 0; i < close.length; i++) {
+close[i].onclick = function () {
+var div = this.parentElement;
+div.style.display = "none";
+}
+}
+// Add a "checked" symbol when clicking on a list item
+var list = document.querySelector('ul');
+
+list.addEventListener('click', function (ev) {
+if (ev.target.tagName === 'LI') {
+ev.target.classList.toggle('checked');
+}
+}, false);
+// Create a new list item when clicking on the "Add" button
+function newElement() {
+var li = document.createElement("li");
+var inputValue = document.getElementById("mainInput").value;
+var t = document.createTextNode(inputValue);
+li.appendChild(t);
+if (inputValue === '') {
+alert("Kom ihåg att du måste skriva nåt");
+} else {
+document.getElementById("mainUl").appendChild(li);
+}
+document.getElementById("mainInput").value = "";
+var span = document.createElement("SPAN");
+var txt = document.createTextNode("\u00D7");
+span.className = "close";
+span.appendChild(txt);
+li.appendChild(span);
+for (i = 0; i < close.length; i++) {
+close[i].onclick = function () {
+var div = this.parentElement;
+div.style.display = "none";
+}
+}
+}
+
+</script>
+</body>
+
+<script>
+// You can also require other files to run in this process
+require('./renderer.js')
+</script>
+</html>
